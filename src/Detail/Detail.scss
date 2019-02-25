@@ -1,0 +1,82 @@
+.Detail-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.Detail {
+	width: 800px;
+	background-color: #F5F5F5;
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+.detail-card {
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	padding: 0 15px 15px 15px;
+}
+
+.detail-picture {
+	height: 100% !important;
+	width: 100% !important;
+}
+
+.detail-title {
+	font-size: 18px;
+	padding-left: 0 !important;
+}
+
+.detail-description {
+	padding-top: 50px !important;
+	text-align: left !important;
+}
+
+.detail-text {
+	text-align: left !important;
+}
+
+.button-container {
+	display:flex;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+	background-color: #6D9DC5;
+	border-radius: 5px 5px 0px 0px;
+	border-bottom: 1px solid #6d6c6c;
+}
+
+.previous, .next {
+	margin: 0 !important;
+	margin-top: 15px !important;
+	margin-bottom: 15px !important;
+}
+
+.previous {
+	margin-left: 15px !important;
+}
+
+.next {
+	margin-right: 15px !important;
+}
+
+.meta {
+	margin-top: 15px !important;
+	margin-bottom: 15px !important;
+}
+.link{
+    text-align: center;
+}
+
+.someImage{
+    width: 30%;
+    height: 30%;
+    padding-bottom: 20px;
+}
+
+.innerClass{
+    width: 100%;
+    background-color: #ffffff;
+}

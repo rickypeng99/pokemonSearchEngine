@@ -1,0 +1,76 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.List {
+     
+	display: flex;
+    justify-content: center;
+}
+
+.pokedex{
+    position: absolute;
+    top: 30%;
+    text-align: center;
+}
+
+.someImage{
+    width: 30%;
+    height: 30%;
+    padding-bottom: 20px;
+}
+
+.Segment{
+    display: flex;
+    justify-content: space-around;
+}
+
+.popular-list-list {
+	flex-direction: column;
+	padding-top: 15px;
+    width: 100%;
+    display: inline-block;
+}
+
+.picture-list {
+	padding-bottom: 10px;
+	padding-left: 10px;
+	display: flex;
+}
+
+.container {
+   
+	width: 50%;
+	background-color: #6D9DC5;
+	padding: 15px;
+    border-radius: 5px;
+    margin:0 auto;
+}
+
+.title, .rating {
+	color: black;
+}
+
+.card {
+	width: 100%;
+	border-bottom: 1px solid black;
+	background-color: #F5F5F5;
+	padding-top: 10px;
+	transition: all .2s ease-in-out;
+}
+
+.card:hover {
+	cursor: pointer;
+	transform: scale(1.15);
+	background-color: #6D9DC5;
+}
+
+.ui.radio.checkbox {
+	padding-top: 15px !important;
+	padding-right: 15px !important;
+}
+
+.input {
+	padding-bottom: 15px;
+}
