@@ -2,8 +2,12 @@
   "name": "mp2",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://rickypeng99.gitlab.io/cs498rkmp2",
   "dependencies": {
+    "chart.js": "^2.7.3",
+    "create-react-class": "^15.6.3",
     "react": "^16.8.3",
+    "react-chartjs": "^1.2.0",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5"
   },

@@ -1,0 +1,78 @@
+// https://stackoverflow.com/questions/23274338/how-to-keep-wrapped-flex-items-the-same-width-as-the-elements-on-the-previous-ro
+ @mixin flex-wrap-fix($flex-basis, $max-viewport-width: 2000px) {
+    flex-grow: 1;
+    flex-basis: $flex-basis;
+    max-width: 100%;
+  
+    $multiplier: 1;
+    $current-width: 0px;
+  
+    @while $current-width < $max-viewport-width {
+      $current-width: $current-width + $flex-basis;
+      $multiplier: $multiplier + 1;
+  
+      @media(min-width: $flex-basis * $multiplier) {
+        max-width: percentage(1/$multiplier);
+      }
+    }
+}
+
+.navBar{
+    text-align: center;
+}
+
+.someImage{
+    width: 30%;
+}
+
+.someImage:hover{
+    	cursor: pointer;
+
+}
+.galleryContainer{
+    display: flex; 
+    flex-wrap: wrap;
+    list-style-type: none;
+    background-color: #F5F5F5;
+    justify-content: center;
+
+}
+
+.galleryCard {
+    @include flex-wrap-fix(200px);
+    
+    flex: 20%;
+	background-color: #F5F5F5;
+    margin: 10px;
+    text-align: center;
+}
+
+
+.filterList {
+    margin-top: 10px;
+	display:flex;
+	justify-content: space-between;
+	padding: 20px;
+	border-radius: 5px 5px 0px 0px;
+    // background: linear-gradient(to right, #ff0000 0%, #ff0000 50%, #ffffff 50%, #ffffff 100%)
+    background-color: #dcdcdc;
+}
+
+.ui.card,
+.ui.cards>.card {
+
+    width: 100% !important;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+
+
+
+  
+.pokemonView:hover {
+	cursor: pointer;
+	background-image: url("../assets/pokeball.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}

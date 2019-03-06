@@ -5,6 +5,7 @@ import 'semantic-ui-css/semantic.min.css'
 
 //import components
 import Search from "../Search/Search.jsx"
+import Gallery from "../Gallery/Gallery.jsx"
 import Detail from "../Detail/Detail.jsx"
 import history from '../history.jsx';
 
@@ -15,9 +16,7 @@ class App extends Component {
       <Router history={history}>
         <Switch>
           <Route exact path = "/" component = {Search} />
-          {/* <Route exact path = "/gallery" component = {Gallery} />
-          <Route exact path = "/detail" component = {Detail} /> */}
-                   
+          <Route exact path = "/gallery" component = {Gallery} />                   
                    
                     {/* Access from react router's paramter */}
 
