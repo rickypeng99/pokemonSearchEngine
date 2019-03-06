@@ -5,6 +5,10 @@ pages:
   script:
     - npm install
     - npm install react-router
+    - npm install semantic-ui-react
+    - npm install axios
+    - npm install semantic-ui-css/semantic.min.css
+    - npm install history
     - npm run build
     - cp -a build/. public/
   artifacts:
