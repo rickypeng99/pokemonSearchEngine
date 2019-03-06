@@ -25,5 +25,12 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "history": "^4.7.2",
+    "react-router": "^4.3.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.85.0"
+  }
 }
