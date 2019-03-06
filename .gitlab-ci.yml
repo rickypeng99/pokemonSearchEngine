@@ -4,6 +4,7 @@ pages:
   stage: deploy
   script:
     - npm install
+    - npm install react-router
     - npm run build
     - cp -a build/. public/
   artifacts:
