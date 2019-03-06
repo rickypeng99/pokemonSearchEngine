@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {Input, Radio, Grid, Image, Segment, Checkbox, Card, Button } from 'semantic-ui-react';
+import {Checkbox, Card, Button } from 'semantic-ui-react';
 import axios from 'axios';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import history from '../history.jsx'
 
 require('./Gallery.scss');
@@ -28,7 +28,7 @@ class Gallery extends Component {
         //when checkbox is checked, need to pop the value
         if(filterArray.includes(data.value)){
             filterArray = filterArray.filter(function(value, index, arr){
-                return value != data.value;
+                return value !== data.value;
             });
             needAdd = false;
         }
@@ -37,12 +37,12 @@ class Gallery extends Component {
         if(needAdd){
             filterArray.push(data.value);
             filterArray = filterArray.filter(function(value, index, arr){
-                return value != "all";
+                return value !== "all";
             });
         }
         
         //if none of the checkbox is checked, then apply "all" filter
-        if(filterArray.length == 0){
+        if(filterArray.length === 0){
             filterArray.push("all");
         }
 
@@ -89,7 +89,8 @@ class Gallery extends Component {
         return(
             <div className = "navBar">
                 <div className = "innerClass">
-                    <img className = "someImage" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png" onClick={()=>history.push("/")}></img>
+                    <img className = "someImage" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png"onClick={()=>history.push("/")} 
+                            alt = "Sprite"></img>
                 </div>
                 <Button className = "button-link" onClick={()=>history.push("/")}>Homepage</Button>
                 <div className = "filterList">
@@ -111,7 +112,7 @@ class Gallery extends Component {
                     <Checkbox label='Water' value='water' onChange={this.filterHandler.bind(this)}/> 
                 </div>
                 
-                {!(this.state.pokemons.length != 150)
+                {!(this.state.pokemons.length !== 150)
                     ? <p>Please wait, loading all pokemons......</p>
                     : <PokemonGallery pokemons={this.state.pokemons} filter={this.state.filter}/>
                 }
@@ -176,6 +177,10 @@ function PokemonGallery(props){
 							</li>
                         </div>
 
+                    )
+                } else{
+                    return(
+                        <p>No pokemon with this type(s)</p>
                     )
                 }
             })}

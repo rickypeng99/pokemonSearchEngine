@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Card, Input, Dropdown, Radio, Label, Grid, Image, Button, Segment, Checkbox } from 'semantic-ui-react';
+import { Card, Label, Button} from 'semantic-ui-react';
 import axios from 'axios';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import history from '../history'
 require('./Detail.scss');
 
@@ -24,7 +24,7 @@ class Detail extends Component{
     //Pokemon's index in Pokemons array = pokemon's ID - 1
     previousHandler(){
         var index = parseInt(this.state.pokemonId)
-        if(index == 1){
+        if(index === 1){
             //return to Mew
             this.props.history.push("/detail/" + this.state.TOTAL_POKEMON_COUNT);
             this.setState({pokemonId: this.state.TOTAL_POKEMON_COUNT, pokemon: this.state.pokemons[this.state.TOTAL_POKEMON_COUNT - 1]});
@@ -36,7 +36,7 @@ class Detail extends Component{
 
     nextHandler(){
         var index = parseInt(this.state.pokemonId)
-        if(index == this.state.TOTAL_POKEMON_COUNT){
+        if(index === this.state.TOTAL_POKEMON_COUNT){
             //return to bulbasuar
             this.props.history.push("/detail/" + 1);
             this.setState({pokemonId: 1, pokemon: this.state.pokemons[0]});
@@ -92,7 +92,8 @@ class Detail extends Component{
 	            <div className="pokedex">
                     
                 <div className = "innerClass">
-                        <img className = "someImage" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png"onClick={()=>history.push("/")}></img>
+                        <img className = "someImage" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png"onClick={()=>history.push("/")} 
+                        alt = "Sprite"></img>
                 </div>
 
                 <Button className = "button-link" onClick={()=>history.push("/")}>Homepage</Button>

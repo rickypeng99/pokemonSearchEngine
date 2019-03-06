@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Input, Radio,Card, Grid, Image, Segment, Checkbox, Button } from 'semantic-ui-react';
+import {Input, Radio,Card, Segment, Checkbox, Button } from 'semantic-ui-react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import history from '../history.jsx'
@@ -99,8 +99,8 @@ class Search extends Component {
 					</div>
 					</div>
 
-					<img className = "someImage" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png"></img>
-
+					<img className = "someImage" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png"onClick={()=>history.push("/")} 
+                        alt = "Sprite"></img>
 
 
 					<br></br>
@@ -130,7 +130,7 @@ class Search extends Component {
 
 function searchingFor(search) {
 	return function(x) {
-		if(search == "?"){
+		if(search === "?"){
 			return true;
 		} else{
 			return x.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -141,8 +141,8 @@ function searchingFor(search) {
 }
 
 function comparisonFunction(sortby, radio) {
-	if(sortby == 'name') {
-		if(radio == 'ascending') {
+	if(sortby === 'name') {
+		if(radio === 'ascending') {
 			return function(a, b) {
 				if(a.name.toLowerCase() < b.name.toLowerCase())
 					return -1;
@@ -162,7 +162,7 @@ function comparisonFunction(sortby, radio) {
 		}
 	}
 	else if(sortby === 'id'){
-		if(radio == 'ascending') {
+		if(radio === 'ascending') {
 			return function(a, b) {
 				return a.id - b.id;
 			}
@@ -174,7 +174,7 @@ function comparisonFunction(sortby, radio) {
 		}
 	}
 	else if(sortby === 'stats'){
-		if(radio == 'ascending') {
+		if(radio === 'ascending') {
 			return function(a, b) {
 				var aStats = a.stats;
 				var bStats = b.stats;
@@ -208,7 +208,7 @@ function comparisonFunction(sortby, radio) {
 
 
 function PokemonGridList(props) {
-	if(props.query == ""){
+	if(props.query === ""){
 		return(
 			<div className = "warning">
 				
@@ -216,7 +216,7 @@ function PokemonGridList(props) {
 				
 			</div>
 		)
-	} else if(props.pokemons.filter(searchingFor(props.query)).length == 0){
+	} else if(props.pokemons.filter(searchingFor(props.query)).length === 0){
 		return(
 			<div className = "warning">
 				
@@ -258,6 +258,10 @@ function PokemonGridList(props) {
                                 </Card>
 								</div>
 	
+						)
+					} else{
+						return(
+							<p>No pokemons with this type(s)</p>
 						)
 					}
 				})}
